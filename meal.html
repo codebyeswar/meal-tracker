@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Tracker</title>
+    <link rel="stylesheet" href="meal.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Meal Tracker</h1>
+
+        <!-- Top Section: Category Selection & Search with Quantity -->
+        <div class="top-section">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">🍽️ All</button>
+                <button class="tab-btn" data-category="non-veg">🥩 Non-Veg</button>
+                <button class="tab-btn" data-category="vegetables">🥦 Vegetables</button>
+                <button class="tab-btn" data-category="fruits">🍎 Fruits</button>
+                <button class="tab-btn" data-category="spices">🌶️ Spices</button>
+                <button class="tab-btn" data-category="dairy">🥛 Dairy</button>
+                <button class="tab-btn" data-category="oil">🛢️ Oil</button>
+                <button class="tab-btn" data-category="flour">🌾 Flour</button>
+            </div>
+
+            <div class="search-box">
+              <input type="text" id="ingredient-search" placeholder="Search for an ingredient...">
+              <input type="number" id="ingredient-quantity" placeholder="Qty (g)">
+              <button class="btn" id="add-ingredient">Add</button>
+              <button class="btn" id="refresh-ingredients">Refresh</button>
+          </div>
+          
+        </div>
+
+        <!-- Main Section -->
+        <div class="main-section">
+            <!-- Left Section -->
+            <div class="left-box">
+                <!-- Your Dish Section -->
+                <div class="dish-section">
+                  <div class="dish-header">
+                      <h2>Your Dish</h2>
+                      <div class="dish-buttons">
+                          <button class="btn" id="clear-all">Clear All</button>
+                          <!--<button class="btn" id="clear-selected">Clear</button>-->
+                      </div>
+                  </div>
+                  <div id="item-display"></div> <!-- Scrollable box for selected items -->
+              </div>
+              
+              
+
+                <!-- Portion Size Section -->
+                <div class="portion-container">
+                  <h3>Portion Size</h3>
+                  
+                  <div class="portion-top">
+                      <input type="number" id="portion-size" placeholder="Enter portion (g)">
+                      <div id="portion-total">Total Calories: 0 kcal</div>
+                  </div>
+                  
+                  <button class="btn" id="calculate-portion">Calculate</button>
+              </div>
+              
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-box">
+                <!-- Bar Chart Section -->
+                <div class="graph-container">
+                    <h3>Nutritional Breakdown</h3>
+                    <canvas id="nutritionChart"></canvas>
+                </div>
+
+                <!-- Total Nutrition Section -->
+                <div class="nutrition-summary-box">
+                    <h3>Total Nutrition</h3>
+                    <div class="nutrition-values">
+                        <div class="mini-box">
+                            <h4>Calories</h4>
+                            <div id="box-total-calories">0 kcal</div>
+                        </div>
+                        <div class="mini-box">
+                            <h4>Protein</h4>
+                            <div id="box-total-protein">0 g</div>
+                        </div>
+                        <div class="mini-box">
+                            <h4>Carbs</h4>
+                            <div id="box-total-carbs">0 g</div>
+                        </div>
+                        <div class="mini-box">
+                            <h4>Fat</h4>
+                            <div id="box-total-fat">0 g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="meal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
